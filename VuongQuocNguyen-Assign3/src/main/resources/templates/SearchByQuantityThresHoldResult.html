@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- Thymeleaf namespace should be added for template
+processing -->
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{/fragments/general.html :: headerFiles}"> </head>
+	<header th:insert="~{/fragments/general.html :: header}"> </header>
+
+	<body>
+	
+				<h1> Search Result  </h1>
+		<table>
+			<tr>
+				<th>Product Code</th>
+				<th>Product Brand</th>
+				<th>Quantity</th>
+				<th>Product Price</th>
+			</tr>
+			<tr th:each="aProducts:${products}">
+				<td th:text="${aProducts.productCode}"></td>
+				<td th:text="${aProducts.productBrand}"></td>
+				<td th:text="${aProducts.quantity}"></td>
+				<td th:text="${aProducts.productPrice}"></td>
+			</tr>
+		</table>
+	
+		
+		
+		<div th:replace="~{/fragments/general.html :: footer}"> </div>
+	</body>
+</html>

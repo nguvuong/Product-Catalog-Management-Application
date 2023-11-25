@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- Thymeleaf namespace should be added for template
+processing -->
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{/fragments/general.html :: headerFiles}"> </head>
+	<header th:insert="~{/fragments/general.html :: header}"> </header>
+
+	<body>
+		<p> Please edit the product data: </p>
+<form action="#" th:action="@{/deleteProductData}" th:object="${product}" method="post">
+<input type="hidden" name="id" th:value="${product.id}"/>
+<p> productCode: <input type="text" th:field="*{productCode}" /></p>
+<p> productBrand: <input type="text" th:field="*{productBrand}" /></p>
+<p> quantity: <input type="text" th:field="*{quantity}" /></p>
+<p> productPrice: <input type="text" th:field="*{productPrice}" /></p>
+<p> <input type="submit" value="Submit" /> </p> <br>
+</form>
+<p> <a href="/deleteableListOfCourses"> Cancel</a> </p>
+		<div th:replace="~{/fragments/general.html :: footer}"> </div>
+	</body>
+</html>
+		
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+	<!-- Thymeleaf namespace should be added for template processing -->
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{/fragments/general.html :: headerFiles}"> </head>
+	<header th:insert="~{/fragments/general.html :: header}"> </header>
+	<body>
+
+		<p> Please enter the product brand input form:</p>
+		<form action="#" th:action="@{/SearchProductBrand}" th:object="${product1}" method="post">
+
+			<p>Search Product Brand:<input type="text" th:field="*{productBrand}" /></p>
+			
+
+			<p><input type="submit" value="Submit" /> <br>
+			<input type="reset" value="Reset" /></p>
+		</form>
+		<p> <a href="/index"> Cancel</a> </p>
+
+		<div th:replace="~{/fragments/general.html :: footer}"> </div>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+	<!-- Thymeleaf namespace should be added for template processing -->
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{/fragments/general.html :: headerFiles}"> </head>
+	<header th:insert="~{/fragments/general.html :: header}"> </header>
+	<body>
+
+		<p>
+		The Java EE application is to get product input data as a Product object, add the
+Product object to the database, update, retrieve Product objects from the databas based on criteria and
+display as a table. Each row in the table displays one Product object
+		.
+		To begin the application click </p>
+			<a href="/productDataInput">Add a Product</a> <br>
+				<a href="/editableListOfProducts">Edit/Delete a Product</a> <br>
+			
+			<a href="/SearchProductBrand">Search by a Product Brand</a> <br>
+			<a href="/SearchByQuantityThresHold">Search by a Quantity Threshold</a>
+		<div th:replace="~{/fragments/general.html :: footer}"> </div>
+	</body>
+
+</html>

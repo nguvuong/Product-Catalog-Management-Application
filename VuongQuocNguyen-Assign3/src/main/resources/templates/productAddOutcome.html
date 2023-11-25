@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/fragments/general.html :: headerFiles}"> </head>
+<body>
+<header th:insert="~{/fragments/general.html :: header}"> </header>
+<h3> Add product outcome: </h3>
+<p th:text = "${message}"> </p> <br>
+<p> To go to the home page, please click
+<a href="/index"> Continue </a> </p>
+<div th:replace="~{/fragments/general.html :: footer}"></div>
+</body>
+</html>
