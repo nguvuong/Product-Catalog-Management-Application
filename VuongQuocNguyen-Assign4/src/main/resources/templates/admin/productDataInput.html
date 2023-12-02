@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+	<!-- Thymeleaf namespace should be added for template processing -->
+	<html xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<head th:replace="~{/fragments/general.html :: headerFiles}"> </head>
+	<header th:insert="~{/fragments/general.html :: header}"> </header>
+	<body>
+
+		<p> Please fill the product data input form:</p>
+		<form action="#" th:action="@{/admin/productDataInput}" th:object="${product1}" method="post">
+			<p> Product Code:  <input type="text" th:field="*{productCode}" /></p>
+			<p> Product Brand:<input type="text" th:field="*{productBrand}" /></p>
+			<p> Quantity:<input type="text" th:field="*{quantity}" /></p>
+			<p> Product Price:<input type="text" th:field="*{productPrice}" /></p>
+			<p><input type="submit" value="Submit" /> <br>
+			<input type="reset" value="Reset" /></p>
+		</form>
+		<p> <a href="/index" th:ref "@{/index}"> Cancel</a> </p>
+
+		<div th:replace="~{/fragments/general.html :: footer}"> </div>
+	</body>
+</html>

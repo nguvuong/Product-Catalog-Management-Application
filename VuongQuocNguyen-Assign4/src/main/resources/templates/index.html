@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+	<!-- Thymeleaf namespace should be added for template processing -->
+<html xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras- springsecurity6">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title> Class 12-1 Example </title>
+	</head>
+	<header th:insert="~{/fragments/general.html :: header}"> </header>
+	<body>
+
+		<p>
+		The Java EE application is to get product input data as a Product object, add the
+Product object to the database, update, retrieve Product objects from the databas based on criteria and
+display as a table. Each row in the table displays one Product object
+		.
+		To begin the application click </p>  
+
+	<a href = "/admin/productDataInput" th:href = "@{/admin/productDataInput}">Add a Product</a> <br>
+			<a href = "/admin/editableListOfProducts" th:href = "@{/admin/editableListOfProducts}">Edit/Delete a Product</a> <br>
+			<a  href = "/sales/SearchProductBrand" th:href = "@{/sales/SearchProductBrand} " >Search by a Product Brand</a> <br>
+			<a href = "/sales/SearchByQuantityThresHold" th:href = "@{/sales/SearchByQuantityThresHold} " >Search by a Quantity Threshold</a>
+	
+		<a href = "/guest/user" th:href = "@{/guest/user}"></a> <br>
+	</body>
+
+</html>
